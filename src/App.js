@@ -4,7 +4,7 @@ import ZenQuote from "./ZenQuote";
 
 const App = () => {
   return (
-    <ZenQuote />
+    <ZenQuote timeInterval="20" />
   );
 };
 
