@@ -49,15 +49,16 @@ class ZenQuote extends React.Component {
   }
 
   render() {
-    if (this.state.quotes.length === 0) return;
+    if (this.state.quotes.length === 0) 
+      return <div>Loading...</div>;
 
     const quote = this.state.quotes[this.state.index];
 
     return (
       <div>
-        <blockquote>
+        <blockquote className="quote-block">
           &ldquo;{quote.q}&rdquo;
-          <footer>&mdash; {quote.a}</footer>
+          <footer className="quote-footer">&mdash; {quote.a}</footer>
         </blockquote>
       </div>
     );
