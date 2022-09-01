@@ -8,8 +8,8 @@ function App() {
     <div className="App">
       <div className="App-header">
         <NavigationBar />
-        <ZenQuote timeInterval="25" />
       </div>
+      <ZenQuote timeInterval="25" />
       <div className="container">
         <div className="company-logo">
           <img
