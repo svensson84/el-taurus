@@ -11,10 +11,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/svensson84/tmp-sample-pkg.git"
+    "url": "https://github.com/svensson84/el-taurus.git"
   },
   "dependencies": {
     "@babel/core": "^7.16.0",
+    "@emailjs/browser": "^3.7.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
     "@svgr/webpack": "^6.3.1",
     "@testing-library/jest-dom": "^5.16.5",
