@@ -1,0 +1,26 @@
+#!/usr/bin/expect
+
+# Usage deploy.expect <password>
+
+set timeout 60
+
+spawn scp build.tar.gz u108746431@access914770759.webspace-data.io:.
+
+expect "yes/no" {
+        send "yes\r"
+        expect "*?assword" { send "[lindex $argv 0]\r" }
+        } "*?assword" { send "[lindex $argv 0]\r" }
+
+
+spawn ssh u108746431@access914770759.webspace-data.io
+
+expect "yes/no" { 
+	send "yes\r"
+	expect "*?assword" { send "[lindex $argv 0]\r" }
+	} "*?assword" { send "[lindex $argv 0]\r" }
+
+expect "(uiserver):u108746431:~$ " { send "tar xvf build.tar.gz\r" }
+expect "(uiserver):u108746431:~$ " { send "rm build.tar.gz\r" }
+expect "(uiserver):u108746431:~$ " { send "exit\r" }
+
+exit
