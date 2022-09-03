@@ -2,7 +2,7 @@ import "./ZenQuote.css";
 import React from "react";
 
 class ZenQuote extends React.Component {
-  CORS_PROXY_URI = "https://cors-anywhere.herokuapp.com";
+  CORS_PROXY_URI = "https://thingproxy.freeboard.io/fetch";
   ZEN_QUOTES_REST_API_URI = "https://zenquotes.io/api/quotes";
 
   constructor(props) {
