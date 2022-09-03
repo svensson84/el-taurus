@@ -8,8 +8,8 @@ function App() {
     <div className="App">
       <div className="App-header">
         <NavigationBar />
+        <ZenQuote timeInterval="15" />
       </div>
-      <ZenQuote timeInterval="25" />
       <div className="container">
         <div className="company-logo">
           <img
@@ -66,6 +66,7 @@ function App() {
           including versions of Lorem Ipsum.
         </article>
       </div>
+      <div className="App-footer">© 2022 Sven Zaugg</div>
     </div>
   );
 }

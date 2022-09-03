@@ -1,12 +1,21 @@
 .App {
   text-align: center;
-  margin-top: 60px;
+  margin-top: 110px;
 }
 
 .App-header {
   position: fixed;
   top: 0;
   width: 100%;
+}
+
+.App-footer {
+  height: 35px;
+  width: 100%;
+  padding: 0.5rem 0rem;
+  background-color: #6d034b;
+  color: #fff;
+  text-align: center;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Karla:wght@200;400&display=swap");
@@ -17,7 +26,7 @@
 }
 
 html {
-  scroll-padding-top: 70px;
+  scroll-padding-top: 130px;
 }
 
 body {
