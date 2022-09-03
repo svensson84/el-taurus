@@ -2,7 +2,7 @@ import "./ZenQuote.css";
 import React from "react";
 
 class ZenQuote extends React.Component {
-  CORS_PROXY_URI = "https://thingproxy.freeboard.io/fetch";
+  CORS_PROXY_URI = "https://api.codetabs.com/v1/proxy?quest=";
   ZEN_QUOTES_REST_API_URI = "https://zenquotes.io/api/quotes";
 
   constructor(props) {
@@ -29,7 +29,7 @@ class ZenQuote extends React.Component {
   }
 
   fetchQuotes() {
-    fetch(this.CORS_PROXY_URI + '/' + this.ZEN_QUOTES_REST_API_URI)
+    fetch(this.CORS_PROXY_URI + this.ZEN_QUOTES_REST_API_URI)
       .then((response) => response.json())
       .then((json) => JSON.parse(JSON.stringify(json)))
       .then((quotes) => this.setState({ quotes: quotes }))
