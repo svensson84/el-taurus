@@ -1,7 +1,13 @@
 import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
-import { Button, TextField, InputAdornment } from "@mui/material";
+import {
+  Button,
+  TextField,
+  InputAdornment,
+  Alert,
+  AlertTitle,
+} from "@mui/material";
 import {
   PersonOutlineRounded,
   AlternateEmailRounded,
@@ -49,22 +55,26 @@ const ContactForm = () => {
   if (submitted) {
     return (
       <>
-        <div>Danke vielmals für deine Anfrage!</div>
-        <div>Ich freue mich Dich kennen zu lernen.</div>
+        <Alert severity="info">
+          <AlertTitle>Anfrage erfolgreich gesendet.</AlertTitle>
+          Danke vielmals f&uuml;r deine Anfrage!
+          <br />
+          Ich freue mich Dich kennen zu lernen.
+        </Alert>
       </>
     );
   } else if (error) {
     return (
       <>
-        <div>
+        <Alert severity="error">
+          <AlertTitle>Technische Probleme</AlertTitle>
           Deine Anfrage konnte aufgrund technischer Probleme leider nicht
           gesendet werden.
-        </div>
-        <div>
+          <br />
           Versuche mich bitte direkt per E-Mail (
           <a href="mailto:zaugg84@gmail.com">zaugg84@gmail.com</a>) zu
           erreichen. Danke!
-        </div>
+        </Alert>
       </>
     );
   }
@@ -72,10 +82,11 @@ const ContactForm = () => {
   return (
     <div>
       {recaptchaFailed && (
-        <div>
+        <Alert severity="warning">
+          <AlertTitle>reCAPTCHA</AlertTitle>
           Du musst zuerst das reCAPTCHA H&auml;kchen setzen, bevor deine Anfrage
           gesendet werden kann.
-        </div>
+        </Alert>
       )}
 
       <form
@@ -182,7 +193,7 @@ const ContactForm = () => {
               "&:hover": {
                 backgroundColor: "#a41b6b",
               },
-              marginTop: "10px"
+              marginTop: "10px",
             }}
           >
             Anfrage senden!
